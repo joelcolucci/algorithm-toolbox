@@ -1,6 +1,7 @@
 # Uses python2
 import sys
 
+
 """
 A natural subproblem in this case is the following:
 C(n) is the minimum number of operations
@@ -13,26 +14,7 @@ ANSWER 1 more operation because we can use the +1 op
 
 http://d.pr/i/4r7V
 """
-"""
-DPChange(money, coins)
-MinNumCoins(0) <- 0
 
-for m from 1 to money:
-    MinNumCoins(m) <- infinity
-    for i from 1 to |coins|:
-        if m >= coin:
-            NumCoins <- MinNumCoins(m - coin) + 1
-            if NumCoins < MinNumCoins(m):
-                MinNumCoins(m) <- NumCoins
-
-return MinNumCoins(money)
-"""
-
-n = 3
-t = [1, 2, 3, 4, 5, 6, 7, 8]
-o = [0, 1, 1, 2, 3, 2, 3, 3]
-
-# SEPARATE index AND value were calculating for
 
 def optimal_sequence(N):
     """return optimal sequence"""
@@ -69,7 +51,8 @@ def create_optimal_sequence(N, min_num_ops):
             if min_num_ops[cur_val / 2] < min_op:
                 sequence[i] = cur_val / 2
                 updated_val = cur_val / 2
-        elif cur_val % 3 == 0:
+
+        if cur_val % 3 == 0:
             if min_num_ops[cur_val / 3] < min_op:
                 sequence[i] = cur_val / 3
                 updated_val = cur_val / 3
